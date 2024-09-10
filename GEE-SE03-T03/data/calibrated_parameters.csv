@@ -1,0 +1,10 @@
+catchment_name,objective_function,Sm,beta,alfa,Rs,Rf
+"Medina River, TX, USA",nse,86.15,0.257,0.548,0.17,0.082
+"Medina River, TX, USA",bias,269.822,0.469,0.11,0.407,0.107
+"Medina River, TX, USA",bias_flows_below_1,186.299,1.437,0.092,0.806,0.117
+"Siletz River, OR, USA",nse,0.0,0.547,0.196,0.496,0.091
+"Siletz River, OR, USA",bias,0.0,1.584,0.0,1.0,0.109
+"Siletz River, OR, USA",bias_flows_below_1,194.496,0.481,0.381,0.435,0.108
+"Trout River, BC, Canada",nse,0.0,1.64,0.526,0.143,0.005
+"Trout River, BC, Canada",bias,47.343,1.995,0.147,0.78,0.068
+"Trout River, BC, Canada",bias_flows_below_1,44.479,0.282,0.353,0.2,0.082
