@@ -43,13 +43,13 @@ Because I think that students should not alter markdown cells, and more importan
 I suggest that the script is run before the tutorial files are passed to the students. When no notebook path is given, it protects all notebooks in the base directory.
 
 ```bash
-python protect.zip [notebook_path]
+python protect.py [notebook_path]
 ```
 
 When you want to edit the notebooks again, you can either disable the protection using _Jupyter Lab_ or by running the command:
 
 ```bash
-python protect.zip --unprotect
+python protect.py --unprotect
 ```
 
 A `--test` flag is also available.
