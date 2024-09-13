@@ -17,13 +17,7 @@ The HTML code:
 ```
 gives a cell that looks like this:
 
-<div style="background:LightSkyBlue;border:1mm solid blue;padding:1%">
-    <h4><span>&#129300 </span>Your Turn: Assignment Title</h4>
-    <ol>
-        <li>Assignment 1</li>
-        <li>Assignment 2</li>
-    </ol>
-</div>
+![](example.png)
 
 ### Zipping the Tutorial Files
 
