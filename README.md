@@ -7,8 +7,8 @@ Because I had trouble finding the assignments in longer notebooks, I introduced 
 The HTML code:
 
 ```html
-<div style="background:LightSkyBlue;border:1mm solid blue;padding:1%">
-    <h4><span>&#129300 </span>Your Turn: Assignment Title</h4>
+<div style="background:#e0f2fe;border:1mm solid SkyBlue;padding:1%">
+    <h4><span>&#129300 </span>Your Turn I: Assignment Title</h4>
     <ol>
         <li>Assignment 1</li>
         <li>Assignment 2</li>
