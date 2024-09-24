@@ -1,4 +1,4 @@
-# Environmental-Modelling-Process
+![](GEE-SE03-T01/figures/Logo.PNG)
 
 ### Assignments
 
