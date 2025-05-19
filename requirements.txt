@@ -2,7 +2,6 @@ python==3.9
 ipywidgets
 joblib
 matplotlib
-numba
 numpy
 pandas
 scipy
