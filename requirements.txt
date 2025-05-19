@@ -1,5 +1,9 @@
+python==3.9
+jupyterlab
+ipywidgets
 matplotlib
 pandas
-ipywidgets
-jupyterlab
 seaborn
+scipy
+numpy
+notebook
