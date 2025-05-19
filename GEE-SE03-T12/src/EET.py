@@ -481,7 +481,7 @@ def EET_plot(mi, sigma, labelinput=[], mi_lb=np.array([]),
     ms = 10 # Marker size
 
     # Options for the legend
-    sorting = 1 # If 1, inputs will be displayed in the legend
+    sorting = 0 # If 1, inputs will be displayed in the legend
     # according to their influence, i.e. from most sensitive to least sensitive
     # (if 0 they will be displayed according to their original order)
     nb_legend = 13  # number of input names that will be displayed in the legend
@@ -610,7 +610,7 @@ def EET_plot(mi, sigma, labelinput=[], mi_lb=np.array([]),
     L = int(np.ceil(M/A))
     clrs = col # repmat(col, L, 1)
 
-    labelinput_new = [np.nan]*M
+    labelinput_new = labelinput.copy() #[np.nan]*M
 
     if sorting:
         Sidx = np.flip(np.argsort(mi), axis=0)

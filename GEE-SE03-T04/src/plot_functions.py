@@ -659,7 +659,7 @@ def scatter_plots(X, Y, n_col=5, Y_Label='Y', X_Labels=[], idx=np.array([])):
     Example:
 
     import numpy as np
-    import safepython.plot_functions as pf
+    import src.plot_functions as pf
 
     X = np.random.random((100, 3))
     sin_vect = np.vectorize(np.sin)
@@ -805,7 +805,7 @@ def scatter_plots_col(X, Y, i1, i2, ms=7, X_Labels=[], Y_Label='Y', ax=[]):
 
     import numpy as np
     import matplotlib.pyplot as plt
-    import safepython.plot_functions as pf
+    import src.plot_functions as pf
 
     X = np.random.random((100, 3))
     sin_vect = np.vectorize(np.sin)
@@ -940,7 +940,7 @@ def scatter_plots_interaction(X, Y, ms=7, X_Labels=[], Y_Label='Y'):
     Example:
 
     import numpy as np
-    import safepython.plot_functions as pf
+    import src.plot_functions as pf
 
     X = np.random.random((100, 3))
     sin_vect = np.vectorize(np.sin)
@@ -1070,7 +1070,7 @@ def parcoor(X, X_Labels=[], i_axis=-1, idx=np.array([])):
 
     import numpy as np
     import matplotlib.pyplot as plt
-    import safepython.plot_functions as pf
+    import src.plot_functions as pf
 
     X = np.random.random((100, 3))
     X[:, 2] = X[:, 2] + 2
@@ -1417,7 +1417,7 @@ def stackedbar(S, labelinput=[], Y_Label='Sensitivity', horiz_tick=[], horiz_tic
 
     import numpy as np
     import matplotlib.pyplot as plt
-    from safepython.plot_functions import stackedbar
+    from src.plot_functions import stackedbar
 
     S = np.random.random((5, 4))
     plt.figure(); stackedbar(S)

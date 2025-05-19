@@ -304,7 +304,7 @@ def pawn_indices(X, Y, n, Nboot=1, dummy=False, output_condition=allrange,
                           values above a threshold value
                           (Y >= Ythreshold)
                     (functions allrange, below and above are defined in
-                     safepython.util)
+                     src.util)
                  par = specify the input arguments of the      - list
                        'output_condition' function, i.e. the
                        threshold value when output_condition
@@ -337,11 +337,11 @@ def pawn_indices(X, Y, n, Nboot=1, dummy=False, output_condition=allrange,
     import numpy as np
     import matplotlib.pyplot as plt
     import scipy.stats as st
-    from safepython.sampling import AAT_sampling
-    from safepython.model_execution import model_execution
-    from safepython import PAWN
-    from safepython.plot_functions import boxplot1
-    from safepython.ishigami_homma import ishigami_homma_function
+    from src.sampling import AAT_sampling
+    from src.model_execution import model_execution
+    from src import PAWN
+    from src.plot_functions import boxplot1
+    from src.ishigami_homma import ishigami_homma_function
 
     # Create a generic input-output sample:
     N = 5000 # number of samples
@@ -856,11 +856,11 @@ def pawn_plot_cdf(X, Y, n, n_col=5, Y_Label='output y', cbar=False,
     import numpy as np
     import matplotlib.pyplot as plt
     import scipy.stats as st
-    from safepython.sampling import AAT_sampling
-    from safepython.model_execution import model_execution
-    from safepython import PAWN
-    from safepython.plot_functions import boxplot1
-    from safepython.ishigami_homma import ishigami_homma_function
+    from src.sampling import AAT_sampling
+    from src.model_execution import model_execution
+    from src import PAWN
+    from src.plot_functions import boxplot1
+    from src.ishigami_homma import ishigami_homma_function
 
     # Create a generic input-output sample:
     N = 1000 # number of samples
@@ -1104,11 +1104,11 @@ def pawn_plot_ks(YF, FU, FC, xc, n_col=5, X_Labels='',
     import numpy as np
     import matplotlib.pyplot as plt
     import scipy.stats as st
-    from safepython.sampling import AAT_sampling
-    from safepython.model_execution import model_execution
-    from safepython import PAWN
-    from safepython.plot_functions import boxplot1
-    from safepython.ishigami_homma import ishigami_homma_function
+    from src.sampling import AAT_sampling
+    from src.model_execution import model_execution
+    from src import PAWN
+    from src.plot_functions import boxplot1
+    from src.ishigami_homma import ishigami_homma_function
 
     # Create a generic input-output sample:
     N = 1000 # number of samples

@@ -439,7 +439,7 @@ def plot_convergence(S, NN, S_lb=np.array([]), S_ub=np.array([]),
     pltfont = {'fontname': 'DejaVu Sans', 'fontsize': 15} # font for axes
     pltfont_leg = {'family': 'DejaVu Sans', 'size': 15} # font for legend
     # Options for the legend
-    sorting = 1  # If 1, inputs will be displayed in the legend
+    sorting = 0  # If 1, inputs will be displayed in the legend
     # according to their influence, i.e. from most sensitive to least sensitive
     # (if 0 they will be displayed according to their original order)
     nb_legend = S.shape[1] # number of input names that will be displayed in the legend
@@ -569,7 +569,7 @@ def plot_convergence(S, NN, S_lb=np.array([]), S_ub=np.array([]),
     else:
         V2 = max(1.1, np.max(S.flatten()))
 
-    labelinput_new = [np.nan]*M
+    labelinput_new = labelinput.copy() # [np.nan]*M
 
     if sorting:
         Sidx = np.flip(np.argsort(S[-1, :]), axis=0)
@@ -595,7 +595,7 @@ def plot_convergence(S, NN, S_lb=np.array([]), S_ub=np.array([]),
                  markeredgecolor='k', markersize=10)
 
     # Draw an horizontal line at 0:
-    plt.plot([H1, H2], [0, 0], 'k')
+    # plt.plot([H1, H2], [0, 0], 'k')
 
     for i in range(M):
         # Plot trajectory with increasing number of samples:
@@ -622,12 +622,12 @@ def plot_convergence(S, NN, S_lb=np.array([]), S_ub=np.array([]),
     plt.legend(labelinput_new, loc='upper right', prop=pltfont_leg, bbox_to_anchor=(1.4, 1.05))
 
     # Tick labels for horizontal axis:
-    xtick_label = [np.nan]*R
-    for k in range(R):
-        xtick_label[k] = '%d' % (NN[k])
-    plt.xlim(H1, H2)
-    plt.ylim(V1, V2)
-    plt.xticks(NN, label=xtick_label, **pltfont)
+    # xtick_label = [np.nan]*R
+    # for k in range(R):
+    #     xtick_label[k] = '%d' % (NN[k])
+    # plt.xlim(H1, H2)
+    # plt.ylim(V1, V2)
+    # plt.xticks(NN, label=xtick_label, **pltfont)
     plt.grid(linestyle='--')
 
 
@@ -659,7 +659,7 @@ def scatter_plots(X, Y, n_col=5, Y_Label='Y', X_Labels=[], idx=np.array([])):
     Example:
 
     import numpy as np
-    import safepython.plot_functions as pf
+    import src.plot_functions as pf
 
     X = np.random.random((100, 3))
     sin_vect = np.vectorize(np.sin)
@@ -805,7 +805,7 @@ def scatter_plots_col(X, Y, i1, i2, ms=7, X_Labels=[], Y_Label='Y', ax=[]):
 
     import numpy as np
     import matplotlib.pyplot as plt
-    import safepython.plot_functions as pf
+    import src.plot_functions as pf
 
     X = np.random.random((100, 3))
     sin_vect = np.vectorize(np.sin)
@@ -940,7 +940,7 @@ def scatter_plots_interaction(X, Y, ms=7, X_Labels=[], Y_Label='Y'):
     Example:
 
     import numpy as np
-    import safepython.plot_functions as pf
+    import src.plot_functions as pf
 
     X = np.random.random((100, 3))
     sin_vect = np.vectorize(np.sin)
@@ -1070,7 +1070,7 @@ def parcoor(X, X_Labels=[], i_axis=-1, idx=np.array([])):
 
     import numpy as np
     import matplotlib.pyplot as plt
-    import safepython.plot_functions as pf
+    import src.plot_functions as pf
 
     X = np.random.random((100, 3))
     X[:, 2] = X[:, 2] + 2
@@ -1417,7 +1417,7 @@ def stackedbar(S, labelinput=[], Y_Label='Sensitivity', horiz_tick=[], horiz_tic
 
     import numpy as np
     import matplotlib.pyplot as plt
-    from safepython.plot_functions import stackedbar
+    from src.plot_functions import stackedbar
 
     S = np.random.random((5, 4))
     plt.figure(); stackedbar(S)

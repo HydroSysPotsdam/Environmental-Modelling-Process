@@ -45,7 +45,7 @@ def empiricalcdf(x, xi):
 
     import numpy as np
     import matplotlib.pyplot as plt
-    from safepython.util import empiricalcdf
+    from src.util import empiricalcdf
     x = np.random.random((10,))
     F = empiricalcdf(x, x)
     xi = np.arange(np.min(x), np.max(x), 0.001)

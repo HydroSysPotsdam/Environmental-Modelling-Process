@@ -194,11 +194,11 @@ def vbsa_indices(YA, YB, YC, M, Nboot=0, dummy=False):
 
     import numpy as np
     import scipy.stats as st
-    import safepython.VBSA as VB
-    from safepython.model_execution import model_execution
-    from safepython.sampling import AAT_sampling
+    import src.VBSA as VB
+    from src.model_execution import model_execution
+    from src.sampling import AAT_sampling
 
-    from safepython.ishigami_homma import ishigami_homma_function
+    from src.ishigami_homma import ishigami_homma_function
 
     fun_test = ishigami_homma_function
     M = 3
@@ -553,12 +553,12 @@ def vbsa_convergence(YA, YB, YC, M, NN, Nboot=0, dummy=False):
     import numpy as np
     import matplotlib.pyplot as plt
     import scipy.stats as st
-    import safepython.VBSA as VB
-    import safepython.plot_functions as pf
-    from safepython.model_execution import model_execution
-    from safepython.sampling import AAT_sampling
+    import src.VBSA as VB
+    import src.plot_functions as pf
+    from src.model_execution import model_execution
+    from src.sampling import AAT_sampling
 
-    from safepython.ishigami_homma import ishigami_homma_function
+    from src.ishigami_homma import ishigami_homma_function
 
     fun_test = ishigami_homma_function
     M = 3

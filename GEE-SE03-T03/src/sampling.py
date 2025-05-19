@@ -91,7 +91,7 @@ def AAT_sampling(samp_strat, M, distr_fun, distr_par, N, nrep=5):
     import scipy.stats as st
     import matplotlib.pyplot as plt
 
-    from safepython.sampling import AAT_sampling
+    from src.sampling import AAT_sampling
 
     # Example 1: 2 inputs, both from Unif[0,3]
     N = 1000
@@ -435,7 +435,7 @@ def OAT_sampling(r, M, distr_fun, distr_par, samp_strat, des_type, nrep=5):
 
     import scipy.stats as st
     import matplotlib.pyplot as plt
-    from safepython.sampling import OAT_sampling
+    from src.sampling import OAT_sampling
 
     # Example 1: 2 inputs, both from Unif[0,3]
     r = 10
@@ -662,7 +662,7 @@ def Morris_orientation_matrix(k, p):
 
     import numpy as np
     import matplotlib.pyplot as plt
-    from safepython.sampling import Morris_orientation_matrix
+    from src.sampling import Morris_orientation_matrix
 
     p = 4
     k = 2
