@@ -1,2 +1,2 @@
-![](Final%20Project/figures/Logo.png)
+![](GEE-SE03-T12/figures/Logo.PNG)
 
