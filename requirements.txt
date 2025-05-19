@@ -1,9 +1,10 @@
 python==3.9
-jupyterlab
 ipywidgets
+joblib
 matplotlib
-pandas
-seaborn
-scipy
+numba
 numpy
-notebook
+pandas
+scipy
+seaborn
+tqdm
