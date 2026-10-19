@@ -1,0 +1,15 @@
+name: EnvMod
+channels: 
+- conda-forge
+dependencies:
+- python=3.14
+- ipywidgets
+- joblib
+- matplotlib
+- numpy
+- pandas
+- scipy
+- seaborn
+- tqdm
+- numba
+- jupyter
