@@ -2,14 +2,15 @@ name: EnvMod
 channels: 
 - conda-forge
 dependencies:
-- python=3.14
+- python=3.12
 - ipywidgets
 - joblib
-- matplotlib
+- matplotlib-base
 - numpy
 - pandas
 - scipy
-- seaborn
+- seaborn-base
+- statsmodels
 - tqdm
 - numba
 - jupyter
