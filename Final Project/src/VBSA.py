@@ -419,32 +419,43 @@ def compute_indices(YA, YB, YC):
     For details on how to cite SAFE in your publication, please see:
     https://www.safetoolbox.info
     """
+
+    YA = np.asarray(YA, dtype=float)
+    YB = np.asarray(YB, dtype=float)
+    YC = np.asarray(YC, dtype=float)
+
     Nc = YC.shape
     M = Nc[0]
 
     nanB = np.isnan(YB)
     nanA = np.isnan(YA)
 
-    f0 = np.mean(YA[~nanA])
-    VARy = np.mean(YA[~nanA]**2) - f0**2
+    f0   = np.nanmean(np.concatenate((YA, YB), axis=0))
+    VARy = np.nanvar(np.concatenate((YA, YB), axis=0), ddof=0)
 
-    Si = np.nan * np.ones((M,))
-    STi = np.nan * np.ones((M,))
-    idxSi = np.nan * np.ones((M,))
-    idxSTi = np.nan * np.ones((M,))
+    if VARy <= 0 or np.isnan(VARy):
+        raise ValueError('"YA" has zero or undefined variance; cannot compute sensitivity indices.')
+
+    Si     = np.full((M,), np.nan)
+    STi    = np.full((M,), np.nan)
+    idxSi  = np.full((M,), np.nan)
+    idxSTi = np.full((M,), np.nan)
 
     for i in range(M):
 
         yCi = YC[i, :]
+        Nci = len(yCi)
         nanC = np.isnan(yCi)
 
         idx = nanA | nanC #  find indices where either YA or YCi is a NaN
         # and that will need to be excluded from computation
 
-        Si[i] = (np.mean(YA[~idx]*yCi[~idx]) - f0**2) / VARy
+        # Si[i] = (np.mean(YA[~idx]*yCi[~idx]) - f0**2) / VARy
         # This is Eq (4.21) in Saltelli et al. (2008)
         # and also Eq. (12) in Saltelli et al. (2010), where the method is
         # attributed to Sobol (1993).
+        Si[i] = np.mean(YA[~idx]*(yCi[~idx] - YB[~idx]))/VARy
+        # this more stable estimator is found in Saltelli et al. 2010 CPC (see SaLib)
 
         idxSi[i] = np.sum(~idx) # save number of samples that could be actually
         # used for estimating main effects
@@ -453,8 +464,10 @@ def compute_indices(YA, YB, YC):
         idx = nanB | nanC # find indices where either YB or YCi is a NaN
         # and that will need to be excluded from computation
 
-        STi[i] = 1 - (np.mean(YB[~idx]*yCi[~idx]) - f0**2) / VARy
+        # STi[i] = 1 - (np.mean(YB[~idx]*yCi[~idx]) - f0**2) / VARy
         # This is Eq (4.22) in Saltelli et al. (2008)
+        STi[i] = 0.5*np.mean((YB[~idx] - yCi[~idx])**2)/VARy
+        # this more stable estimator is found in Saltelli et al. 2010 CPC (see SaLib)
 
         idxSTi[i] = np.sum(~idx) # save number of samples that could be actually
         # used for estimating total effects

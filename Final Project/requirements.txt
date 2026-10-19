@@ -1,0 +1,10 @@
+ipywidgets
+joblib
+matplotlib
+numpy
+pandas
+scipy
+seaborn
+tqdm
+numba
+jupyter
