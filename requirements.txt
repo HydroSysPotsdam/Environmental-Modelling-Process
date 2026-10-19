@@ -6,3 +6,5 @@ pandas
 scipy
 seaborn
 tqdm
+numba
+jupyter
